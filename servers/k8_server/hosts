@@ -1,0 +1,7 @@
+[k8masters]
+
+[k8nodes]
+
+[k8servers:children
+k8masters
+k8nodes

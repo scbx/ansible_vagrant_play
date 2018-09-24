@@ -7,3 +7,6 @@
 
 - name: yum install git
   yum: name=git state=latest
+
+- name: yum install tree
+  yum: name=tree state=latest
