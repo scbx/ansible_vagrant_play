@@ -1,0 +1,9 @@
+---
+- name: yum install rsyslog
+  yum: name=rsyslog state=latest
+
+- name: template rsyslog conf file
+  template: src=rsyslog.conf dest=/etc/rsyslog.conf
+
+- name: systemd enable start rsyslogd
+  systemd: name=rsyslog state=started enabled=yes

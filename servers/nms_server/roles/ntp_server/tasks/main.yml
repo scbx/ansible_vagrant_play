@@ -1,3 +1,9 @@
 ---
 - name: install ntp server
   yum: name=ntp state=present
+
+- name: template ntp.conf
+  template: src=ntp.conf dest=/etc/ntp.conf
+
+- name: systemd start enable ntpserver
+  systemd: name=ntpd state=started enabled=yes

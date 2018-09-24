@@ -4,5 +4,6 @@
   become: yes
 
   roles:
-   - dns_server
+   #- dns_server
    - ntp_server
+   - syslog_server
