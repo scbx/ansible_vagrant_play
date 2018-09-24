@@ -5,5 +5,12 @@
 - name: template ntp.conf
   template: src=ntp.conf dest=/etc/ntp.conf
 
+- name: add fw rules
+  firewalld:
+    port: 123/udp
+    permanent: true
+    immediate: yes
+    state: enabled
+
 - name: systemd start enable ntpserver
   systemd: name=ntpd state=started enabled=yes

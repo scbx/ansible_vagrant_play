@@ -14,5 +14,12 @@
 - name: template reverse.conf
   template: src=0.168.192.db dest=/var/named/0.168.192.db
 
+- name: enabled fw rules
+  firewalld:
+    service: dns
+    permanent: true
+    state: enabled
+    immediate: yes
+
 - name: systemd restart enable bind
   systemd: name=named state=started enabled=yes
