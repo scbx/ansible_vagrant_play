@@ -1,3 +1,5 @@
 ansible_ssh_user: vagrant
 ansible_ssh_pass: vagrant
-ansible_connection: vagrant
+ansible_connection: ssh
+k8m_api_ip: 192.168.0.251
+k8_pod_network: 192.168.11.0/24

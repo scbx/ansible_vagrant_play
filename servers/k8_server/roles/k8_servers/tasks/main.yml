@@ -3,7 +3,7 @@
   command: setenforce 0
 
 - name: template disable selinux
-  template: src=selinux.conf dest=/etc/selinux/config
+  template: src=config dest=/etc/selinux/config
 
 - name: swap off
   command: swapoff -a
@@ -41,3 +41,17 @@
     - kubelet
     - kubeadm
     - kubectl
+
+- name: systemd enable start docker
+  systemd: name=docker state=started enabled=yes
+
+- name: add kubernetes to docker cgroup
+  command: sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+- name: systemctl daemon-reload
+  command: systemctl daemon-reload
+
+- name: systemd restart kubernetes
+  systemd: name=kubelet state=restarted enabled=yes
+
+

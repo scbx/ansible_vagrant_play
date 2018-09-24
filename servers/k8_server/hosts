@@ -1,7 +1,8 @@
 [k8masters]
-
+192.168.0.251
 [k8nodes]
+192.168.0.252
 
-[k8servers:children
+[k8servers:children]
 k8masters
 k8nodes

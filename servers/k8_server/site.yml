@@ -1,8 +1,8 @@
 - name: setup k8 pre-reqs
   hosts: k8servers
   become: yes
-  
-  - roles: k8_servers
+  roles: 
+    - k8_servers
 
 #- name: setup k8 master
 #  hosts: k8masters
@@ -14,4 +14,4 @@
 #  hosts: k8nodes
 #  become: yes
 
- # - roles: k8_nodes
+# - roles: k8_nodes
