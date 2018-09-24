@@ -1,0 +1,22 @@
+$TTL 86400
+@   IN   SOA    primary.lab.local. root.lab.local. (
+2018240920   ;Serial
+3600         ;Refresh
+1800         ;Retry
+604800       ;Expire
+86400        ;Minimum TTL
+)
+;Name Server Information
+@    IN  NS    primary.lab.local.
+;IP address of name server
+primary IN A   192.168.0.242
+;Mail Exchanger
+lab.local.  IN  MX 10   mail.lab.local.
+;A - Record HostName to IP address
+primary IN  A   192.168.0.242
+nms1    IN  A   192.168.0.241
+k8m1    IN  A   192.168.0.251
+k8n1    IN  A   192.168.0.252
+;CNAME record
+nms2    IN  CNAME primary.lab.local.
+

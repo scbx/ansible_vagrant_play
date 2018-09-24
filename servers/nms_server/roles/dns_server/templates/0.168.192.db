@@ -1,0 +1,15 @@
+$TTL 86400
+@   IN  SOA     primary.lab.local. root.lab.local. (
+2018240920  ;Serial
+3600        ;Refresh
+1800        ;Retry
+604800      ;Expire
+86400       ;Minimum TTL
+)
+;Name Server information
+@ IN NS   primary.lab.local.
+;Reverse lookup for Name Server
+241  IN PTR nms1.lab.local.
+242  IN PTR primary.lab.local.
+251  IN PTR k8m1.lab.local.
+252  IN PTR k8n1.lab.local.

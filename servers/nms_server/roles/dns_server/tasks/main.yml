@@ -5,3 +5,14 @@
 - name: install bind-utils
   yum: name=bind-utils state=latest
 
+- name: template bind named.conf
+  template: src=named.conf dest=/etc/named.conf
+
+- name: template fwd_zone.conf
+  template: src=fwd.lab.local.db dest=/var/named/fwd.lab.local.db
+
+- name: template reverse.conf
+  template: src=0.168.192.db dest=/var/named/0.168.192.db
+
+- name: systemd restart enable bind
+  systemd: name=named state=started enabled=yes

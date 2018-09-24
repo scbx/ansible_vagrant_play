@@ -1,6 +1,9 @@
 ---
-- name: install epel
+- name: yum install epel
   yum: name=epel-release state=latest
 
-- name: install vim
+- name: yum install vim
   yum: name=vim state=latest
+
+- name: yum install git
+  yum: name=git state=latest
