@@ -1,0 +1,8 @@
+---
+- name: install common packages
+  hosts: nms_servers
+  become: yes
+
+  roles:
+   - dns_server
+   - ntp_server
